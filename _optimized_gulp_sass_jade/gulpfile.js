@@ -1,5 +1,5 @@
 var gulp         = require('gulp'),
-		sass         = require('gulp-sass'),
+		var stylus   = require('gulp-stylus'),
 		autoprefixer = require('gulp-autoprefixer'),
 		minifycss    = require('gulp-minify-css'),
 		rename       = require('gulp-rename'),
@@ -15,14 +15,12 @@ gulp.task('browser-sync', ['styles', 'scripts', 'jade'], function() {
 				},
 				notify: false
 		});
-		
+
 });
 
 gulp.task('styles', function () {
-	return gulp.src('sass/*.sass')
-	.pipe(sass({
-		includePaths: require('node-bourbon').includePaths
-	}).on('error', sass.logError))
+	return gulp.src('stylus/*.styl')
+	.pipe(stylus())
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
 	.pipe(minifycss())
@@ -50,7 +48,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('sass/*.sass', ['styles']);
+	gulp.watch('stylus/*.styl', ['styles']);
 	gulp.watch('jade/*.jade', ['jade']);
 	gulp.watch('app/libs/**/*.js', ['scripts']);
 	gulp.watch('app/js/*.js').on("change", browserSync.reload);
