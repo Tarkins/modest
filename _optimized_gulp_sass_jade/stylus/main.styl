@@ -1,7 +1,11 @@
-@import "vars.styl"
+@import '_vars.styl'
+@import 'mixins.styl'
+@import 'fonts.styl'
+@import 'optimize.styl'
+@import '../jade/**/*'
 
 //Load Libs SASS
-@import "app/libs/animate/animate.styl"
+@import 'animate.css'
 
 *::-webkit-input-placeholder
 	color: #666
@@ -26,8 +30,5 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-//Custom Styles Here
-
-
 //ALWAYS END
-@import "media"
+@import 'media.styl'

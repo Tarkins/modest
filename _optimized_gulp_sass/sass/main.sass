@@ -1,8 +1,23 @@
 @import "bourbon"
+@import "owl-carousel.sass"
 @import "vars.sass"
+@import "normalize.sass"
+@import "fonts.sass"
 
 //Load Libs SASS
 @import "app/libs/animate/animate.sass"
+
+body,
+html
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+	font-family: "OpenSans"
+
+*,
+*:before,
+*:after
+	box-sizing: inherit
 
 *::-webkit-input-placeholder
 	color: #666
@@ -29,6 +44,359 @@ body textarea:required:valid
 
 //Custom Styles Here
 
+.clearfix:after
+  content: ''
+  display: table
+  clear: both
+
+.section
+	padding: 80px 0
+
+.main-header
+	background-color: #1d2126
+
+.container
+	width: 90%
+	max-width: 1170px
+	margin: 0 auto
+	padding: 0 15px
+
+.logo
+	float: left
+	padding-top: 30px
+
+.main-menu
+	float: right
+	font-size: 0
+	padding-top: 25px
+	padding-bottom: 25px
+
+.menu__item
+	display: inline-block
+	color: #a4aead
+	font-family: "OpenSans"
+	font-size: 14px
+	line-height: 1.5
+	font-weight: 600
+	text-transform: uppercase
+	list-style: none
+	padding: 4px 9px
+	border-radius: 5px
+	cursor: pointer
+	transition: .3s
+	&:not(:last-child)
+		margin-right: 15px
+	&:hover
+		box-shadow: 0 0 0 2px #a4aead
+	&.active
+		box-shadow: 0 0 0 2px #23b7a4
+
+.slider__slide
+	position: relative
+
+.slide__info
+	padding-top: 220px
+	padding-bottom: 250px
+	max-width: 650px
+
+.slide__heading
+	color: white
+	font-family: "QuattrocentoSans"
+	font-size: rem(36px)
+	font-weight: 700
+	line-height: rem(42px)
+	text-transform: uppercase
+	margin-bottom: 15px
+
+.slide__desc
+	color: #ccd0d7
+	font-family: "OpenSans"
+	font-size: rem(16px)
+	font-weight: 400
+	line-height: rem(23px)
+	margin-bottom: 40px
+
+.button
+	display: inline-block
+	padding: 10px 21px
+	color: #fff
+	background-color: transparent
+	border-radius: 4px
+	box-shadow: 0 0 0 2px #fff
+	font-family: "QuattrocentoSans"
+	font-size: rem(14px)
+	font-weight: 700
+	line-height: rem(20px)
+	text-transform: uppercase
+	cursor: pointer
+	transition: .5s
+	text-decoration: none
+	&:not(:last-child)
+		margin-right: 10px
+	&:hover
+		background-color: #23b7a4
+		box-shadow: 0 0 0 #23b7a4
+
+.slide
+	&_first
+		background: url("../img/slider__bg.jpg") no-repeat center
+		background-size: cover
+	&_second
+		background: url("../img/slider__bg2.jpg") no-repeat center
+		background-size: cover
+	&_third
+		background: url("../img/slider__bg3.jpg") no-repeat center
+		background-size: cover
+
+.slider_top
+	.owl-dots
+		position: absolute
+		bottom: 5%
+		right: 21%
+		.owl-dot
+			display: inline-block
+			width: 13px
+			height: 13px
+			border-radius: 50%
+			border: 2px solid #fff
+			&:not(:last-child)
+				margin-right: 5px
+			&.active
+				background-color: #fff
+
+.section_about
+	border-bottom: 1px solid #dde1e4
+
+.section__heading
+	color: #292f36
+	font-family: "QuattrocentoSans"
+	font-size: 36px
+	font-weight: 700
+	line-height: 42px
+	text-transform: uppercase
+	border-left: 10px solid #e1e6ea
+	padding-left: 15px
+
+.section__content
+	margin-top: 34px
+
+.section__description
+	float: left
+	max-width: 55.56%
+	color: #8d8f92
+	font-size: rem(16px)
+
+.section__list
+	float: right
+	max-width: 38.89%
+	margin-top: 16px
+
+.list__item
+	position: relative
+	margin-bottom: 25px
+
+.item__number
+	position: absolute
+	display: inline-block
+	background-color: #23B7A4
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	font-family: "QuattrocentoSans"
+	color: #fff
+	font-size: 20px
+
+.item__heading
+	line-height: 1
+	text-transform: uppercase
+	font-weight: 700
+	font-family: "QuattrocentoSans"
+
+.item__content
+	padding-left: 70px
+
+.item__desc
+	margin-top: 10px
+	color: #8d8f92
+	font-size: 16px
+	line-height: 26px
+
+.section__social-links
+	font-size: 0
+
+.social-links__item
+	display: inline-block
+	background-color: #C8CDD0
+	width: 60px
+	height: 60px
+	font-size: rem(36px)
+	text-align: center
+	line-height: 60px
+	font-family: "Socialico"
+	color: #fff
+	text-decoration: none
+	margin-right: 1px
+	&:hover
+		background-color: #d0d5d9
+
+.section__people
+	font-size: 0
+	text-align: center
+	justify-content: center
+	margin-top: 60px
+	display: flex
+	flex-wrap: nowrap
+
+.section__person
+	display: inline-block
+	width: 263px
+	background-color: #E1E6EA
+	transition: .5s
+	margin-bottom: 20px
+	min-width: 0
+	&:not(:last-child)
+		margin-right: 20px
+
+	&:hover
+		background-color: $main-color
+
+		.person__social-links
+			display: block
+
+		.person__name,
+		.person__position
+			color: #fff
+
+.person__img-wrapper
+	position: relative
+
+
+.person__social-links
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	font-size: 0
+	background-color: rgba(255,255,255, .4)
+
+.social-links__wrapper
+	display: block
+	text-align: center
+	margin-top: 120px
+
+.person__img
+	max-width: 100%
+
+.person__description
+	text-align: left
+	padding: 15px 20px
+	padding-top: 10px
+
+.person__social-link
+	display: inline-block
+	font-family: "Socialico"
+	font-size: 28px
+	text-decoration: none
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	background-color: $main-color
+	color: #fff
+	transition: .3s
+	&:not(:last-child)
+		margin-right: 1px
+	&:hover
+		background-color: #4e5a62
+
+.person__name
+	font-family: "QuattrocentoSans"
+	font-weight: 700
+	text-transform: uppercase
+	font-size: 16px
+
+.person__position
+	font-size: 14px
+	color: #8d8f92
+
+.section_work
+	background-color: $main-color
+	.section__heading
+		color: #fff
+		border-color: #4e5a62
+
+.section__gallery
+	font-size: 0
+	text-align: center
+	margin-top: 60px
+
+
+.gallery__item
+	position: relative
+	display: inline-block
+	overflow: hidden
+	width: 360px
+	height: 265px
+	font-family: "QuattrocentoSans"
+	color: white
+	font-weight: 700
+	text-transform: uppercase
+	margin: 0 10px 30px
+	&:hover
+		.img__bottom,
+		.img__top
+			opacity: 1
+			transform: translate(0, 0)
+		.img__img
+			transform: scale(1.2) rotate(5deg)
+
+.img__img
+	transition: .5s
+
+.img__bottom
+	position: absolute
+	left: 0
+	bottom: 0
+	background-color: #292f36
+	height: 60px
+	width: 100%
+	transform: translate(0, 100px)
+	opacity: 0
+	transition: .5s
+	text-align: left
+
+
+.img__top
+	display: inline-block
+	position: absolute
+	width: 100%
+	top: 0
+	left: 0
+	height: 205px
+	background-color: transparentize(#292f36, .5)
+	transform: translate(0, -300px)
+	opacity: 0
+	transition: .5s
+	z-index: 1
+
+.img__sign
+	line-height: 225px
+	font-size: 3rem
+
+.img__text
+	line-height: 60px
+	padding-left: 20px
+	font-size: 18px
+
+.section__gallery
+	margin-bottom: 60px
+
+.button-wrapper
+	text-align: center
+	margin-top: 60px
 
 //ALWAYS END
 @import "media"

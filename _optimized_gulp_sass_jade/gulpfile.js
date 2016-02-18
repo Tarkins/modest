@@ -29,7 +29,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('jade', function() {
-	return gulp.src('jade/*.jade')
+	return gulp.src('jade/**/*.jade')
 	.pipe(jade())
 	.pipe(gulp.dest('app'));
 });

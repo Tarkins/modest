@@ -1,0 +1,13 @@
+include ../body/body
+include ../old-browsers/old-browsers
+include ../scripts/scripts
+
+doctype html
+html(lang='ru', class="no-js")
+	include ../head/head
+	+page
+		+header
+		block content
+		+footer
+		+old-browsers
+		+scripts

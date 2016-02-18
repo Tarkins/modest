@@ -38,3 +38,11 @@ $(function() {
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 });
+
+//owl carousel
+$(".slider_top").owlCarousel({
+	items: 1,
+	autoplay: true,
+	dots: true,
+	loop: true
+});
