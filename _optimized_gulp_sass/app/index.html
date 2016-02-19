@@ -45,25 +45,44 @@
 <body>
 
 	<header class="main-header">
-		<div class="container clearfix">
-			<div class="logo">
-				<img src="img/logo.png" alt="" class="logo__img">
+		<div class="container">
+			<div class="main-header__content clearfix">
+				<a class="logo" href="#">
+					<img src="img/logo.png" alt="" class="logo__img">
+				</a>
+				<div class="toggle-menu">
+					<span></span>
+				</div>
+				<nav class="menu main-menu">
+					<ul>
+						<li class="menu__item menu__item_active">
+							<a href="#home" class="menu__link">Home</a>
+						</li>
+						<li class="menu__item">
+							<a href="#about" class="menu__link">About</a>
+						</li>
+						<li class="menu__item">
+							<a href="#team" class="menu__link">Team</a>
+						</li>
+						<li class="menu__item">
+							<a href="#work" class="menu__link">Work</a>
+						</li>
+						<li class="menu__item">
+							<a href="#services" class="menu__link">Services</a>
+						</li>
+						<li class="menu__item">
+							<a href="#features" class="menu__link">Features</a>
+						</li>
+						<li class="menu__item">
+							<a href="#contact" class="menu__link">Contact</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
-			<nav class="menu main-menu">
-				<ul>
-					<li class="menu__item active">Home</li>
-					<li class="menu__item">About</li>
-					<li class="menu__item">Team</li>
-					<li class="menu__item">Work</li>
-					<li class="menu__item">Services</li>
-					<li class="menu__item">Features</li>
-					<li class="menu__item">Contact</li>
-				</ul>
-			</nav>
 		</div>
 	</header>
 
-	<section class="slider slider_top">
+	<section class="slider slider_top" id="home">
 
 		<div class="slider__slide slide slide_first">
 			<div class="container">
@@ -100,7 +119,7 @@
 
 	</section>
 
-	<section class="section section_about">
+	<section class="section section_about" id="about">
 		<div class="container">
 			<h2 class="section__heading">We are modest.</h2>
 			<div class="section__content clearfix">
@@ -145,7 +164,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section secion_team">
+	<section class="section secion_team" id="team">
 		<div class="container">
 			<h2 class="section__heading">Meet the team.</h2>
 			<div class="section__people">
@@ -222,59 +241,60 @@
 		</div>
 	</section>
 
-	<section class="section section_work">
+	<section class="section section_work" id="work">
 		<div class="container">
 			<h2 class="section__heading">Lovely work.</h2>
 
 			<div class="section__gallery">
 
-					<div class="gallery__item">
+					<a class="gallery__item" href="img/work__img1_full.jpg" rel="fancybox-thumb">
 						<div class="img__top"><span class="img__sign">+</span></div>
 						<img src="img/work__img1.jpg" class="img__img" alt="">
 						<div class="img__bottom">
 							<span class="img__text">Partnership guidelines</span>
 						</div>
-					</div>
+					</a>
 
-					<div class="gallery__item">
+					<a class="gallery__item" href="img/work__img2_full.jpg" rel="fancybox-thumb">
 						<div class="img__top"><span class="img__sign">+</span></div>
 						<img src="img/work__img2.jpg" class="img__img" alt="">
 						<div class="img__bottom">
 							<span class="img__text">Partnership guidelines</span>
 						</div>
-					</div>
+					</a>
 
-					<div class="gallery__item">
+					<a class="gallery__item" href="img/work__img3_full.jpg" rel="fancybox-thumb">
 						<div class="img__top"><span class="img__sign">+</span></div>
 						<img src="img/work__img3.jpg" class="img__img" alt="">
 						<div class="img__bottom">
 							<span class="img__text">Partnership guidelines</span>
 						</div>
-					</div>
+					</a>
 
-					<div class="gallery__item">
+					<a class="gallery__item" href="img/work__img4_full.jpg" rel="fancybox-thumb">
 						<div class="img__top"><span class="img__sign">+</span></div>
 						<img src="img/work__img4.jpg" class="img__img" alt="">
 						<div class="img__bottom">
 							<span class="img__text">Partnership guidelines</span>
 						</div>
-					</div>
+					</a>
 
-					<div class="gallery__item">
+					<a class="gallery__item" href="img/work__img5_full.jpg" rel="fancybox-thumb"
+					data-thumbnail="img/work__img5.jpg">
 						<div class="img__top"><span class="img__sign">+</span></div>
 						<img src="img/work__img5.jpg" class="img__img" alt="">
 						<div class="img__bottom">
 							<span class="img__text">Partnership guidelines</span>
 						</div>
-					</div>
+					</a>
 
-					<div class="gallery__item">
+					<a class="gallery__item" href="img/work__img6_full.jpg" rel="fancybox-thumb">
 						<div class="img__top"><span class="img__sign">+</span></div>
 						<img src="img/work__img6.jpg" class="img__img" alt="">
 						<div class="img__bottom">
 							<span class="img__text">Partnership guidelines</span>
 						</div>
-					</div>
+					</a>
 
 			</div>
 			<div class="button-wrapper">
@@ -284,20 +304,127 @@
 
 	</section>
 
-	<section class="section section_services">
+	<section class="section section_services" id="services">
 		<div class="container">
 			<h2 class="section__heading">What we do.</h2>
 
 			<div class="services__pluses">
 				<div class="pluses__item">
-					<img src="" alt="" class="pluses__img">
-					<div class="pluses__title"></div>
-					<div class="pluses__desc"></div>
+					<div class="pluses__img theme-setup"></div>
+					<div class="pluses__title">easy theme setup</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+
+				<div class="pluses__item">
+					<div class="pluses__img pixel-perfect"></div>
+					<div class="pluses__title">pixel perfect design</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+				<div class="pluses__item">
+					<div class="pluses__img responsive"></div>
+					<div class="pluses__title">responsive display</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+				<div class="pluses__item">
+					<div class="pluses__img support"></div>
+					<div class="pluses__title">24/7 support</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+				<div class="pluses__item">
+					<div class="pluses__img bootstrap"></div>
+					<div class="pluses__title">latest bootstrap version</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+				<div class="pluses__item">
+					<div class="pluses__img user-friendly"></div>
+					<div class="pluses__title">user friendly</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+				<div class="pluses__item">
+					<div class="pluses__img perfomance"></div>
+					<div class="pluses__title">fast performance</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
+				</div>
+				<div class="pluses__item">
+					<div class="pluses__img cloud"></div>
+					<div class="pluses__title">cloud technology</div>
+					<div class="pluses__desc">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.</div>
 				</div>
 			</div>
 
 		</div>
 	</section>
+	<section class="section section_features" id="features">
+		<div class="container">
+			<h2 class="section__heading">Features.</h2>
+
+			<div class="features clearfix">
+
+				<div class="features__item">
+					<img src="img/features1.jpg" alt="" class="features__img">
+					<div class="features__title">product design : eames chairs</div>
+					<div class="features__desc">Eames designs are certainly iconic. Everyone of us know at least two or three of their famous chairs. I would even risk saying that most of us dream about having a nice Eames.</div>
+				</div>
+				<div class="features__item">
+					<img src="img/features2.jpg" alt="" class="features__img">
+					<div class="features__title">elegant and colorful logos</div>
+					<div class="features__desc">I’ve always found logo design to be one of the most challenging things to get right. There’s so much that a logo can say about a brand without actually saying it.</div>
+				</div>
+				<div class="features__item">
+					<img src="img/features3.jpg" alt="" class="features__img">
+					<div class="features__title">a showcase of creative</div>
+					<div class="features__desc">It’s always interesting to see another designer’s take on a famous website, app or even physical product. Different designers add their own personality and style.</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section section_contact" id="contact">
+		<div class="container">
+			<h2 class="section__heading">Stay in touch</h2>
+		</div>
+		<div class="contact__map" id="map"></div>
+		<div class="contact__info">
+			<div class="container clearfix">
+				<div class="contact__text">
+					<div class="contact__heading">Contact information</div>
+					<div class="contact__descripton">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique nec dolor non, ornare sagittis dolor. Nulla vestibulum lacus sed molestie gravida.</p>
+						<p>Cras fermentum elit quis magna congue, <strong>vel sodales</strong> arcu vestibulum. Nunc lobortis dui magna, quis dapibus lacus</p>
+					</div>
+				</div>
+				<form class="contact__form">
+					<div class="form__input-wrapper">
+						<label class="form__label" for="name">Your name</label>
+						<input class="form__input" type="text" id="name" name="name" required>
+					</div>
+					<div class="form__input-wrapper">
+						<label class="form__label" for="email">Your email</label>
+						<input class="form__input" type="email" id="email" name="email" required>
+					</div>
+					<div class="form__input-wrapper_message">
+						<label class="form__label" for="message">Your message</label>
+						<textarea class="form__textarea" name="" id="message" rows="7"></textarea>
+					</div>
+					<input type="submit" class="button button_form" value="Send message">
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<footer class="main-footer">
+		<div class="footer__content clearfix container">
+			<div class="footer__text">© Copyright 2016. All Rights Reserved.</div>
+			<div class="footer__social">
+				<a href="#" class="social__link">L</a>
+				<a href="#" class="social__link">F</a>
+				<a href="#" class="social__link">H</a>
+				<a href="#" class="social__link">E</a>
+				<a href="#" class="social__link">I</a>
+			</div>
+		</div>
+	</footer>
 
 
 	<div class="hidden"></div>
@@ -308,6 +435,8 @@
 	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
 	<script src="libs/respond/respond.min.js"></script>
 	<![endif]-->
+	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
 
 	<!-- Load Scripts Start -->
 	<script>var scr = {"scripts":[

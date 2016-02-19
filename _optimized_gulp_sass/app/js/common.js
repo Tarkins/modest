@@ -37,7 +37,6 @@ $(function() {
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
-});
 
 //owl carousel
 $(".slider_top").owlCarousel({
@@ -45,4 +44,48 @@ $(".slider_top").owlCarousel({
 	autoplay: true,
 	dots: true,
 	loop: true
+});
+
+
+//yandex maps
+var myMap;
+ymaps.ready(init);
+function init () {
+  myMap = new ymaps.Map('map', {
+    center: [56.14694844, 47.24729561],
+    zoom: 15,
+    controls: []
+  });
+
+  myMap.geoObjects.add(new ymaps.Placemark([56.148588, 47.24206]));
+
+};
+
+//menu button
+	$('.toggle-menu').on('click', function(event){
+		event.preventDefault();
+		$(this).toggleClass('toggle-menu_on');
+	});
+
+//scroll
+$('.main-menu').onePageNav({
+	currentClass: 'menu__item_active'
+});
+
+// gallery pop-up
+$('.gallery__item').fancybox({
+	padding: 0,
+	helpers: {
+   	thumbs: {
+       width  : 60,
+       height : 60,
+   	}
+	}
+});
+
+
+
+
+
+
 });

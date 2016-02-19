@@ -7,15 +7,6 @@
 //Load Libs SASS
 @import "app/libs/animate/animate.sass"
 
-
-
-//include sprites
-@import "sprites/sprite.sass"
-
-@mixin sprite-image($sprite)
-	$sprite-image: nth($sprite, 9)
-	background-image: url(../img/#{$sprite-image})
-
 body,
 html
 	padding: 0
@@ -63,32 +54,26 @@ body textarea:required:valid
 
 .main-header
 	background-color: #1d2126
-	position: fixed
-	top: 0
-	left: 0
-	right: 0
-	z-index: 2
-	&__content
-		padding-bottom: 20px
 
 .container
 	width: 90%
 	max-width: 1170px
 	margin: 0 auto
 	padding: 0 15px
-	position: relative
 
 .logo
 	float: left
-	margin-top: 30px
+	padding-top: 30px
 
 .main-menu
 	float: right
 	font-size: 0
-	margin-top: 25px
+	padding-top: 25px
+	padding-bottom: 25px
 
 .menu__item
 	display: inline-block
+	color: #a4aead
 	font-family: "OpenSans"
 	font-size: 14px
 	line-height: 1.5
@@ -103,19 +88,14 @@ body textarea:required:valid
 		margin-right: 15px
 	&:hover
 		box-shadow: 0 0 0 2px #a4aead
-	&_active
+	&.active
 		box-shadow: 0 0 0 2px #23b7a4
-
-.menu__link
-	text-decoration: none
-	color: #a4aead
-
 
 .slider__slide
 	position: relative
 
 .slide__info
-	padding-top: 300px
+	padding-top: 220px
 	padding-bottom: 250px
 	max-width: 650px
 
@@ -196,20 +176,19 @@ body textarea:required:valid
 	text-transform: uppercase
 	border-left: 10px solid #e1e6ea
 	padding-left: 15px
-	margin-bottom: 60px
 
 .section__content
 	margin-top: 34px
 
 .section__description
 	float: left
-	width: 55.56%
+	max-width: 55.56%
 	color: #8d8f92
 	font-size: rem(16px)
 
 .section__list
 	float: right
-	width: 38.89%
+	max-width: 38.89%
 	margin-top: 16px
 
 .list__item
@@ -253,12 +232,11 @@ body textarea:required:valid
 	height: 60px
 	font-size: rem(36px)
 	text-align: center
-	line-height: 61px
+	line-height: 60px
 	font-family: "Socialico"
 	color: #fff
 	text-decoration: none
 	margin-right: 1px
-	transition: .3s
 	&:hover
 		background-color: #d0d5d9
 
@@ -397,14 +375,12 @@ body textarea:required:valid
 	width: 100%
 	top: 0
 	left: 0
-	right: 0
 	height: 205px
 	background-color: transparentize(#292f36, .5)
 	transform: translate(0, -300px)
 	opacity: 0
 	transition: .5s
 	z-index: 1
-	cursor: pointer
 
 .img__sign
 	line-height: 225px
@@ -422,251 +398,5 @@ body textarea:required:valid
 	text-align: center
 	margin-top: 60px
 
-.services__pluses
-	text-align: center
-	font-size: 0
-
-.pluses__item
-	display: inline-block
-	max-width: 260px
-	margin: 50px 10px 10px
-
-.pluses__img
-	display: inline-block
-	text-align: center
-	vertical-align: top
-
-.pluses__title
-	color: #292f36
-	font-family: "QuattrocentoSans"
-	font-size: 17px
-	font-weight: 700
-	text-transform: uppercase
-	margin-top: 30px
-	margin-bottom: 25px
-
-.pluses__desc
-	color: #8d8f92
-	font-family: "OpenSans"
-	font-size: 16px
-	font-weight: 400
-	line-height: 26px
-
-.theme-setup
-	+sprite($services1)
-
-.pixel-perfect
-	+sprite($services2)
-
-.responsive
-	+sprite($services3)
-
-.support
-	+sprite($services4)
-
-.bootstrap
-	+sprite($services5)
-
-.user-friendly
-	+sprite($services6)
-
-.perfomance
-	+sprite($services7)
-
-.cloud
-	+sprite($services8)
-
-.section_features
-	background-color: #3A454D
-	.section__heading
-		color: #fff
-		border-color: #4e5a62
-
-.features__item
-	width: 32%
-	color: #fff
-	float: left
-	&:not(:last-child)
-		margin-right: 2%
-
-.features__img
-	max-width: 100%
-	min-width: 0
-
-.features__title
-	margin: 15px 0
-	font-family: "QuattrocentoSans"
-	font-size: 18px
-	font-weight: 700
-	line-height: 1.1
-	text-transform: uppercase
-
-.features__desc
-	color: #dcdfe1
-	font-family: "OpenSans"
-	font-size: 16px
-	font-weight: 400
-	line-height: 26px
-
-.contact__map
-	height: 346px
-
-.contact__info
-	margin: 50px 0
-
-.contact__text
-	width: 50%
-	float: left
-
-.contact__heading
-	font-size: 20px
-	color: #292f36
-	margin-bottom: 29px
-	text-transform: uppercase
-	font-family: "QuattrocentoSans"
-	font-weight: 700
-
-.contact__descripton
-	font-size: 16px
-	line-height: 26px
-	color: #8d8f92
-
-.contact__form
-	padding: 24px 30px 30px
-	float: right
-	width: 50%
-	position: absolute
-	right: 5px
-	top: -200px
-	background-color: #fff
-	border-radius: 5px
-
-.form__input,
-.form__textarea
-	background-color: #EAEEF1
-	padding: 6px 12px
-	border-radius: 5px
-	border: 0
-	outline: none
-	font-size: 14px
-	line-height: 1.4
-
-.form__input-wrapper
-	padding: 0 15px
-	width: 50%
-	float: left
-	margin-bottom: 24px
-
-.form__input
-	width: 100%
-	height: 45px
-
-.form__textarea
-	width: 100%
-
-.form__input-wrapper_message
-	padding: 0 15px
-	margin-bottom: 24px
-
-.button_form
-	margin-left: 15px
-	border: 0
-	background-color: #23B7A4
-	&:hover
-		background-color: $main-color
-
-.form__label
-	color: #8d8f92
-	font-weight: bold
-	text-transform: uppercase
-	font-size: 14px
-	font-family: "QuattrocentoSans"
-
-.main-footer
-	background-color: $main-color
-	color: #fff
-
-.footer__content
-	padding: 30px 0
-.footer__text
-	float: left
-	font-size: 14px
-	line-height: 30px
-
-.footer__social
-	float: right
-	font-family: "Socialico"
-	font-size: 0
-
-.social__link
-	font-size: 30px
-	line-height: 30px
-	text-decoration: none
-	color: #fff
-	&:not(:last-child)
-		margin-right: 10px
-
-.toggle-menu
-	display: none
-	width: rem(28px)
-	height: rem(28px)
-	margin-top: rem(14px)
-	float: right
-	margin-top: 30px
-	cursor: pointer
-
-
-.toggle-menu span:after,
-.toggle-menu span:before
-	content: ""
-	position: absolute
-	left: 0
-	top: 9px
-
-.toggle-menu span:after
-	top: 18px
-
-.toggle-menu span
-	position: relative
-	display: block
-
-.toggle-menu span,
-.toggle-menu span:after,
-.toggle-menu span:before
-	width: 100%
-	height: 3px
-	background-color: #fff
-	transition: all 0.3s
-	backface-visibility: hidden
-	border-radius: 2px
-
-.toggle-menu_on span
-	background-color: transparent
-
-.toggle-menu_on span:before
-	transform: rotate(45deg) translate(-1px, 0px)
-
-.toggle-menu_on span:after
-	transform: rotate(-45deg) translate(6px, -7px)
-
-.toggle-menu_on + .main-menu
-	display: block
-	width: 100%
-	text-align: right
-	z-index: 2
-	background-color: #1D2126
-	.menu__item
-		display: block
-		margin: 5px 0
-		border-radius: 0
-		box-shadow: none
-		border-bottom: 1px solid
-		&:hover
-			color: #fff
-
-
-
-@import "jquery.fancybox-thumbs"
-@import "fancybox.sass"
 //ALWAYS END
 @import "media"

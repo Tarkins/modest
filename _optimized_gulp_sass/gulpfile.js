@@ -5,7 +5,8 @@ var gulp         = require('gulp'),
 		rename       = require('gulp-rename'),
 		browserSync  = require('browser-sync').create(),
 		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglifyjs');
+		uglify       = require('gulp-uglifyjs'),
+		spritesmith  = require('gulp.spritesmith');
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
 		browserSync.init({
@@ -28,6 +29,19 @@ gulp.task('styles', function () {
 	.pipe(browserSync.stream());
 });
 
+gulp.task('sprite', function() {
+    var spriteData =
+        gulp.src('sprites/*.*')
+            .pipe(spritesmith({
+                imgName: 'sprite.png',
+                cssName: 'sprite.sass',
+                cssFormat: 'sass'
+            }));
+
+    spriteData.img.pipe(gulp.dest('./app/img/')); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('sass/sprites/')); // путь, куда сохраняем стили
+});
+
 gulp.task('scripts', function() {
 	return gulp.src([
 		'./app/libs/modernizr/modernizr.js',
@@ -36,17 +50,21 @@ gulp.task('scripts', function() {
 		'./app/libs/animate/animate-css.js',
 		'./app/libs/plugins-scroll/plugins-scroll.js',
 		'./app/libs/owl-carousel/owl.carousel.min.js',
+		'./app/libs/scroll.min.js',
+		'./app/libs/fancybox/jquery.fancybox.pack.js',
+		'./app/libs/fancybox/jquery.fancybox-thumbs.js',
 		])
 		.pipe(concat('libs.js'))
-		// .pipe(uglify()) //Minify libs.js
+		.pipe(uglify()) //Minify libs.js
 		.pipe(gulp.dest('./app/js/'));
 });
 
 gulp.task('watch', function () {
 	gulp.watch('sass/*.sass', ['styles']);
 	gulp.watch('app/libs/**/*.js', ['scripts']);
+	gulp.watch('sprites/*.png', ['sprite']);
 	gulp.watch('app/js/*.js').on("change", browserSync.reload);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['browser-sync', 'watch', 'sprite']);
