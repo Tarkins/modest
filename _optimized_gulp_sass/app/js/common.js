@@ -83,7 +83,16 @@ $('.gallery__item').fancybox({
 	}
 });
 
-
+//person animation
+$('.secion_team').waypoint(function(){
+	$('.section__person').each(function(index) {
+		var $this = $(this);
+		setTimeout(function() {
+			$this.removeClass('section__person_off').addClass('section__person_on');
+		}, index * 500)
+	});
+	this.destroy();
+}, {offset: '70%'});
 
 
 
